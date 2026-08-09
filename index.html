@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RMS Titanic: Photo Essay</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #0f172a;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .slideshow-container {
+            position: relative;
+            max-width: 800px;
+            width: 90%;
+            background-color: #1e293b;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+            overflow: hidden;
+        }
+
+        .slide {
+            display: none;
+            text-align: center;
+            animation: fade 0.6s ease-in-out;
+        }
+
+        .slide.active {
+            display: block;
+        }
+
+        .slide-img-container {
+            width: 100%;
+            height: 420px;
+            background-color: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .slide-img-container img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+
+        .caption-container {
+            padding: 20px;
+            color: #f8fafc;
+            background-color: #1e293b;
+            text-align: left;
+        }
+
+        .caption-title {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #38bdf8;
+            margin-bottom: 6px;
+        }
+
+        .caption-text {
+            font-size: 1rem;
+            line-height: 1.5;
+            color: #cbd5e1;
+        }
+
+        /* Navigation Buttons */
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 40%;
+            transform: translateY(-50%);
+            width: 45px;
+            height: 45px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 20px;
+            border-radius: 50%;
+            background-color: rgba(0, 0, 0, 0.5);
+            user-select: none;
+            transition: background-color 0.3s ease;
+            border: none;
+            margin: 0 10px;
+            z-index: 10;
+        }
+
+        .next { right: 0; }
+
+        .prev:hover, .next:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        /* Indicators */
+        .dots-container {
+            text-align: center;
+            padding: 12px;
+            background-color: #0f172a;
+        }
+
+        .dot {
+            cursor: pointer;
+            height: 12px;
+            width: 12px;
+            margin: 0 4px;
+            background-color: #475569;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.3s ease;
+        }
+
+        .dot.active, .dot:hover {
+            background-color: #38bdf8;
+        }
+
+        @keyframes fade {
+            from { opacity: 0.4; }
+            to { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="slideshow-container">
+        <!-- Slide 1: Departure from Southampton (boat.png) -->
+        <div class="slide active">
+            <div class="slide-img-container">
+                <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 500'><rect width='100%' height='100%' fill='white'/><path d='M100 420 Q 400 430 700 420 M 150 400 C 200 370, 600 370, 650 400 L 580 430 L 220 430 Z' fill='none' stroke='%23ff3333' stroke-width='4'/><path d='M300 400 L 300 80 M 300 120 L 450 130 L 450 220 L 300 210 M 300 230 L 480 240 L 480 340 L 300 330' fill='none' stroke='%23ff3333' stroke-width='3'/><path d='M300 80 L 150 250 L 300 380 M 300 150 L 180 280 L 300 380' fill='none' stroke='%23ff3333' stroke-width='3'/><path d='M480 340 L 650 320 L 550 400' fill='none' stroke='%23ff3333' stroke-width='3'/></svg>" alt="Departure from Southampton (boat.png)">
+            </div>
+            <div class="caption-container">
+                <div class="caption-title">1. Departure from Southampton</div>
+                <div class="caption-text">The RMS Titanic departed from Southampton, England, on April 10, 1912, beginning its maiden voyage to New York.</div>
+            </div>
+        </div>
+
+        <!-- Slide 2: Luxury Onboard (stairs.jpg) -->
+        <div class="slide">
+            <div class="slide-img-container">
+                <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 500'><rect width='100%' height='100%' fill='white'/><path d='M 100 450 Q 300 350 600 50 L 700 50 Q 400 370 200 480 Z' fill='none' stroke='black' stroke-width='4'/><path d='M 100 450 L 500 450 M 120 430 L 520 430 M 140 410 L 540 410 M 160 390 L 560 390 M 180 370 L 580 370' stroke='black' stroke-width='2'/><rect x='650' y='120' width='80' height='180' fill='none' stroke='black' stroke-width='3'/></svg>" alt="Luxury Onboard (stairs.jpg)">
+            </div>
+            <div class="caption-container">
+                <div class="caption-title">2. Luxury Onboard</div>
+                <div class="caption-text">The ship was famous for its elegant interiors, which includes the Grand Staircase, rich cabins, and dining rooms.</div>
+            </div>
+        </div>
+
+        <!-- Slide 3: Life Below Deck (deck.png) -->
+        <div class="slide">
+            <div class="slide-img-container">
+                <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 500'><rect width='100%' height='100%' fill='white'/><g fill='%23ff4d4d'><circle cx='250' cy='180' r='25' fill='none' stroke='%23ff4d4d' stroke-width='15'/><rect x='242.5' y='200' width='15' height='150'/><rect x='200' y='230' width='100' height='15' rx='7'/><path d='M 170 280 C 170 380, 330 380, 330 280' fill='none' stroke='%23ff4d4d' stroke-width='15' stroke-linecap='round'/><path d='M 550 150 h 20 v 20 h -20 z M 520 170 h 80 v 25 h -80 z M 500 195 h 120 v 40 h -120 z M 470 235 L 650 235 L 590 340 C 560 380, 500 380, 470 340 Z'/><path d='M 480 360 Q 560 340 640 360 M 480 375 Q 560 355 640 375' fill='none' stroke='%23ff4d4d' stroke-width='8'/></g></svg>" alt="Life Below Deck (deck.png)">
+            </div>
+            <div class="caption-container">
+                <div class="caption-title">3. Life Below Deck</div>
+                <div class="caption-text">Hundreds of engineers and crew members worked around the clock to keep the huge steamship operating.</div>
+            </div>
+        </div>
+
+        <!-- Slide 4: The Iceberg (iceberg.png) -->
+        <div class="slide">
+            <div class="slide-img-container">
+                <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 500'><rect width='100%' height='100%' fill='white'/><path d='M 100 450 L 300 150 L 350 230 L 450 180 L 520 450 Z' fill='black'/><path d='M 300 150 L 330 220 L 280 280 L 100 450 Z' fill='white'/><g fill='%23ffcc00'><path d='M 550 100 L 650 270 L 450 270 Z'/><path d='M 720 100 L 820 270 L 620 270 Z'/><circle cx='550' cy='240' r='8' fill='black'/><rect x='544' y='160' width='12' height='60' fill='black'/><circle cx='720' cy='240' r='8' fill='black'/><rect x='714' y='160' width='12' height='60' fill='black'/></g></svg>" alt="The Iceberg (iceberg.png)">
+            </div>
+            <div class="caption-container">
+                <div class="caption-title">4. The Iceberg</div>
+                <div class="caption-text">On the night of April 14, 1912, lookouts spotted an iceberg directly ahead of the ship’s location. Despite efforts to avoid the iceberg, the ship struck the iceberg.</div>
+            </div>
+        </div>
+
+        <!-- Slide 5: The Distress Call (sos.png) -->
+        <div class="slide">
+            <div class="slide-img-container">
+                <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 500'><rect width='100%' height='100%' fill='white'/><text x='400' y='120' font-family='serif' font-size='90' font-weight='bold' text-anchor='middle'>SOS</text><rect x='100' y='180' width='600' height='250' fill='%230000cd'/><circle cx='400' cy='310' r='55' fill='white' stroke='%23ff0000' stroke-width='8'/><path d='M 385 285 C 385 285 410 285 415 310 C 420 335 395 335 395 335 L 415 355' fill='none' stroke='%23ff0000' stroke-width='12' stroke-linecap='round'/></svg>" alt="The Distress Call (sos.png)">
+            </div>
+            <div class="caption-container">
+                <div class="caption-title">5. The Distress Call</div>
+                <div class="caption-text">As water flooded several compartments, distress signals and rockets were sent into the night sky requesting quick help.</div>
+            </div>
+        </div>
+
+        <!-- Slide 6: Launching the Lifeboats (lifeboat.jpg) -->
+        <div class="slide">
+            <div class="slide-img-container">
+                <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 500'><defs><linearGradient id='bg1' x1='0' y1='0' x2='1' y2='0'><stop offset='0%' stop-color='%23000000'/><stop offset='100%' stop-color='%231a237e'/></linearGradient></defs><rect width='100%' height='100%' fill='url(%23bg1)'/><path d='M 100 250 L 250 100 L 350 300 Z' fill='none' stroke='white' stroke-width='2'/><path d='M 300 300 L 380 200 L 420 300 Z' fill='%231e88e5'/><path d='M 0 280 Q 400 230 800 280 L 800 500 L 0 500 Z' fill='%23000080'/><path d='M 200 380 C 150 380, 180 430, 300 440 C 450 450, 500 380, 480 370 Z' fill='%231565c0' stroke='white' stroke-width='2'/></svg>" alt="Launching the Lifeboats (lifeboat.jpg)">
+            </div>
+            <div class="caption-container">
+                <div class="caption-title">6. Launching the Lifeboats</div>
+                <div class="caption-text">Passengers and crew boarded lifeboats, but many left partially full while leaving hundreds still aboard.</div>
+            </div>
+        </div>
+
+        <!-- Slide 7: Rescue (rescue.png) -->
+        <div class="slide">
+            <div class="slide-img-container">
+                <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 500'><defs><linearGradient id='bg2' x1='0' y1='0' x2='1' y2='0'><stop offset='0%' stop-color='%2305050a'/><stop offset='100%' stop-color='%231a365d'/></linearGradient></defs><rect width='100%' height='100%' fill='url(%23bg2)'/><path d='M 600 250 L 680 180 L 720 270 Z' fill='%231e88e5'/><path d='M 200 350 L 400 250 L 450 280 L 250 380 Z' fill='%232d3748' stroke='black'/><path d='M 0 320 Q 200 280 400 350 T 800 320 L 800 500 L 0 500 Z' fill='%234299e1' opacity='0.8'/><circle cx='450' cy='430' r='10' fill='black'/></svg>" alt="Rescue (rescue.png)">
+            </div>
+            <div class="caption-container">
+                <div class="caption-title">7. Rescue</div>
+                <div class="caption-text">The RMS Carpathia arrived several hours later and rescued the remaining survivors from the lifeboats.</div>
+            </div>
+        </div>
+
+        <!-- Slide 8: Remembering the Titanic (rms.jpg) -->
+        <div class="slide">
+            <div class="slide-img-container">
+                <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 500'><rect width='100%' height='100%' fill='%230f2b5c'/><path d='M 80 80 A 30 30 0 1 0 120 140 A 40 40 0 1 1 80 80 Z' fill='black'/><path d='M 100 320 L 700 320 L 680 270 L 250 270 Z' fill='black'/><rect x='330' y='210' width='25' height='60' fill='black'/><rect x='410' y='210' width='25' height='60' fill='black'/><rect x='490' y='210' width='25' height='60' fill='black'/><rect x='570' y='210' width='25' height='60' fill='black'/><path d='M 0 340 Q 400 310 800 340 L 800 500 L 0 500 Z' fill='%232b6cb0'/></svg>" alt="Remembering the Titanic (rms.jpg)">
+            </div>
+            <div class="caption-container">
+                <div class="caption-title">8. Remembering the Titanic</div>
+                <div class="caption-text">A century later, the Titanic remains a symbol of human arrogance, tragedy, and the importance of ship and passenger safety.</div>
+            </div>
+        </div>
+
+        <!-- Navigation Buttons -->
+        <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
+        <button class="next" onclick="changeSlide(1)">&#10095;</button>
+
+        <!-- Navigation Dots -->
+        <div class="dots-container">
+            <span class="dot active" onclick="currentSlide(0)"></span>
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+            <span class="dot" onclick="currentSlide(4)"></span>
+            <span class="dot" onclick="currentSlide(5)"></span>
+            <span class="dot" onclick="currentSlide(6)"></span>
+            <span class="dot" onclick="currentSlide(7)"></span>
+        </div>
+    </div>
+
+    <script>
+        let slideIndex = 0;
+        const slides = document.getElementsByClassName("slide");
+        const dots = document.getElementsByClassName("dot");
+
+        function showSlide(n) {
+            if (n >= slides.length) slideIndex = 0;
+            if (n < 0) slideIndex = slides.length - 1;
+
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].classList.remove("active");
+            }
+            for (let i = 0; i < dots.length; i++) {
+                dots[i].classList.remove("active");
+            }
+
+            slides[slideIndex].classList.add("active");
+            dots[slideIndex].classList.add("active");
+        }
+
+        function changeSlide(n) {
+            showSlide(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+            showSlide(slideIndex = n);
+        }
+    </script>
+
+</body>
+</html>
